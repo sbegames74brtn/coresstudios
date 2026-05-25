@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORE-S Studios | Eski Sistemler İçin Yazılım Optimizasyonu</title>
+    <meta name="description" content="2016 ve sonrası eski donanımlar için kararlı, hafif ve yüksek performanslı kernel ve yazılım optimizasyon stüdyosu.">
+    
+    <!-- Hızlı ve Hafif Yazı Tipleri -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #09090b;
+            --bg-card: #141417;
+            --border-color: #27272a;
+            --accent-green: #00ff66;
+            --accent-red: #f43f5e;
+            --text-primary: #f4f4f5;
+            --text-secondary: #a1a1aa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigasyon Barı */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(9, 9, 9, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            letter-spacing: -1px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Hero Bölümü */
+        header {
+            max-width: 1000px;
+            margin: 80px auto 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 102, 0.1);
+            color: var(--accent-green);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Ana İçerik Alanı */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+
+        /* İstatistik Paneli */
+        .dashboard {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .dash-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dash-title::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+
+        .card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card.bad { border-left: 4px solid var(--accent-red); }
+        .card.good { border-left: 4px solid var(--accent-green); }
+
+        .card-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .card-value {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .bad .card-value { color: var(--accent-red); }
+        .good .card-value { color: var(--accent-green); }
+
+        /* Özellikler */
+        .features {
+            margin-top: 60px;
+        }
+
+        .features h2 {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .f-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.01);
+        }
+
+        .f-box h3 {
+            font-size: 1rem;
+            color: var(--accent-green);
+            margin-bottom: 10px;
+        }
+
+        .f-box p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer / İletişim */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 80px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        .btn-git {
+            display: inline-block;
+            background: var(--accent-green);
+            color: #000;
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .btn-git:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">> CORE-S_</div>
+        <div class="nav-links">
+            <a href="#features">Özellikler</a>
+            <a href="mailto:info@core-s.com.tr">İletişim</a>
+        </div>
+    </nav>
+
+    <header>
+        <span class="badge">Legacy Systems (2016+) Optimization</span>
+        <h1>CORE-S STUDIOS</h1>
+        <p>Eski donanımları hantal sistem gereksinimlerinden kurtarıyoruz. Çekirdek düzeyinde hafif ve kararlı dijital deneyimler.</p>
+        <a href="mailto:info@core-s.com.tr" class="btn-git">Bizimle İletişime Geçin</a>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <div class="dash-title">Canlı Optimizasyon Raporu</div>
+            <div class="grid">
+                <div class="card bad">
+                    <div class="card-label">Standart Mimari Yükü</div>
+                    <div class="card-value">%82 Şişirilmiş Kod</div>
+                </div>
+                <div class="card good">
+                    <div class="card-label">CORE-S Kernel Sonrası</div>
+                    <div class="card-value">%19 Saf Performans</div>
+                </div>
+            </div>
+        </div>
+
+        <section id="features" class="features">
+            <h2>// Teknolojik Odak Alanlarımız</h2>
+            <div class="feature-row">
+                <div class="f-box">
+                    <h3>Donanım Ömrünü Uzatma</h3>
+                    <p>2016 model ve sonrası eski bilgisayarları en güncel hafif Linux/Pardus disiplinleriyle canlandırıyoruz.</p>
+                </div>
+                <div class="f-box">
+                    <h3>Kernel Optimizasyonu</h3>
+                    <p>Çekirdek seviyesinde gereksiz servisleri eleyerek RAM ve CPU tüketimini minimuma indiriyoruz.</p>
+                </div>
+                <div class="f-box">
+                    <h3>Sıfır Bloatware</h3>
+                    <p>Sistemleri yavaşlatan takipçileri, arka plan telemetrilerini ve şişirilmiş kütüphaneleri tamamen temizliyoruz.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CORE-S Studios. Tüm hakları saklıdır. | <a href="mailto:info@core-s.com.tr">info@core-s.com.tr</a></p>
+    </footer>
+
+</body>
+</html>
