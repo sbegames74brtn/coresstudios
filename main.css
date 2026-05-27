@@ -1,0 +1,69 @@
+/* core-s-studios.css */
+
+/* 1. Sistem Fontu ve Genel Temizlik (Hafif Mimari) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 2. Ciddi ve Premium Arka Plan Kontrastı */
+body {
+    background-color: #0F0F11; /* Derin, mat siyah */
+    color: #E4E4E7; /* Gözü yormayan kurumsal gri-beyaz */
+    line-height: 1.6;
+}
+
+/* 3. Profesyonel Navigasyon Çubuğu */
+nav {
+    background-color: #18181B; /* Kömür grisi */
+    border-bottom: 1px solid #27272A; /* İnce, keskin hatlar */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    color: #34D399; /* Net, oturaklı mühendislik yeşili */
+    font-size: 1.2rem;
+}
+
+/* 4. Ağırbaşlı Proje Kartları (Esnaf Simulator Kartı İçin) */
+.project-card {
+    background-color: #18181B; /* Koyu premium arka plan */
+    border: 1px solid #27272A; /* Parlama yok, temiz kenarlık */
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. Geri Sayım Alanı (Net ve Minimalist) */
+.countdown-section {
+    background: #27272A;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.countdown-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+/* 6. Alt Bilgi (Footer) */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #71717A;
+    font-size: 0.85rem;
+    border-top: 1px solid #27272A;
+    margin-top: 4rem;
+}
