@@ -10,8 +10,241 @@
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Temiz Mimari: CSS Şablonu Dışarıdan Bağlandı -->
-    <link rel="stylesheet" href="core-s-studios.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1C1C21 0%, #0F0F11 100%);
+            color: #E4E4E7;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigasyon Çubuğu */
+        nav {
+            background-color: #18181B;
+            border-bottom: 1px solid #27272A;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            color: #34D399;
+            font-size: 1.3rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .nav-logo span {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .nav-links a {
+            color: #A1A1AA;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #34D399;
+        }
+
+        /* Header Alanı */
+        header {
+            text-align: center;
+            padding: 5rem 2rem;
+            border-bottom: 1px solid #27272A;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin: 1rem 0;
+            color: #FFFFFF;
+        }
+
+        header p {
+            color: #A1A1AA;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background-color: rgba(52, 211, 153, 0.1);
+            color: #34D399;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        /* Oyun Tanıtım Alanı (Flexbox Düzeni) */
+        .game-showcase {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .game-img-box {
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #18181B 0%, #27272A 100%);
+            border: 2px dashed #f1c40f; /* İlk fotodaki o sarı kesikli çerçeve */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f1c40f;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .game-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .game-details h2 {
+            font-size: 2.5rem;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .game-details p {
+            color: #A1A1AA;
+            margin-bottom: 2rem;
+        }
+
+        /* İlk Fotodaki Efsanevi Canlı Sayaç Alanı */
+        .countdown-container {
+            background: #18181B;
+            border: 1px dashed #f1c40f; /* Sarı kesikli çerçeve */
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .countdown-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #f1c40f;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .timer-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+
+        .timer-slot span:first-child {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .timer-label {
+            font-size: 0.75rem;
+            color: #71717A;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+        }
+
+        /* Altyapı Özellikleri */
+        .features {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .features h2 {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+        }
+
+        .feature-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .f-box {
+            flex: 1;
+            min-width: 280px;
+            background: #18181B;
+            border: 1px solid #27272A;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .f-box:hover {
+            border-color: #34D399;
+        }
+
+        .f-box h3 {
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .f-box p {
+            color: #A1A1AA;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #71717A;
+            font-size: 0.85rem;
+            border-top: 1px solid #27272A;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #34D399;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,18 +263,16 @@
     </header>
 
     <main>
-        <!-- OYUN TANITIM ALANI -->
         <section id="oyun" class="game-showcase">
             <div class="game-img-box">
                 <div>Esnaf<br>Simulator</div>
             </div>
             <div class="game-details">
                 <h2>Esnaf Simulator</h2>
-                <p>Kendi dükkanının başına geç! Esnaf kültürünü iliklerine kadar hissedeceğin, veresiye defteri tutacağın, müşterilerle pazarlık yapıp çay ikram edeceğin Godot 4 ile geliştirilmiş yerli simülasyon oyunu.</p>
+                <p>Kendi dükkanının başına geç! Esnaf kültürünü iliklerine kadar hiscedeceğin, veresiye defteri tutacağın, müşterilerle pazarlık yapıp çay ikram edeceğin Godot 4 ile geliştirilmiş yerli simülasyon oyunu.</p>
                 
-                <!-- CANLI SAYAÇ -->
                 <div class="countdown-container">
-                    <div class="countdown-title">// BÜYÜK AÇILIŞA KALAN SÜRE</div>
+                    <div class="countdown-title">⚡ BÜYÜK AÇILIŞA KALAN SÜRE ⚡</div>
                     <div class="timer" id="countdown">
                         <div class="timer-slot"><span id="days">00</span><span class="timer-label">Gün</span></div>
                         <div class="timer-slot"><span id="hours">00</span><span class="timer-label">Saat</span></div>
@@ -72,17 +303,15 @@
     </footer>
 
     <script>
-        // Hedef Çıkış Tarihi Ayarı
         const cikanOyunTarihi = "2026-06-30T00:00:00"; 
 
         function tıkTokSayaç() {
             const hedef = new Date(cikanOyunTarihi).getTime();
             const simdi = new Date().getTime();
-            
             const kalanMilisaniye = hedef - simdi;
 
             if (kalanMilisaniye < 0) {
-                document.getElementById("countdown").innerHTML = "<b style='color:#2ecc71;font-size:1.1rem;font-family:\"Fira Code\",monospace;'>YAYINLANDI! HEMEN OYNAYIN</b>";
+                document.getElementById("countdown").innerHTML = "<b style='color:#34D399;font-size:1.2rem;font-family:\"Fira Code\",monospace;'>YAYINLANDI! HEMEN OYNAYIN</b>";
                 return;
             }
 
