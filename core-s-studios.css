@@ -1,69 +1,189 @@
-/* core-s-studios.css */
+/* --- HTML İLE UYUMLULUK EKLEMELERİ --- */
 
-/* 1. Sistem Fontu ve Genel Temizlik (Hafif Mimari) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+/* Header Alanı */
+header {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: radial-gradient(circle at bottom, #18181B 0%, #0F0F11 100%);
+    border-bottom: 1px solid #27272A;
 }
 
-/* 2. Ciddi ve Premium Arka Plan Kontrastı */
-body {
-    background-color: #0F0F11; /* Derin, mat siyah */
-    color: #E4E4E7; /* Gözü yormayan kurumsal gri-beyaz */
-    line-height: 1.6;
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 1rem 0;
+    color: #FFFFFF;
 }
 
-/* 3. Profesyonel Navigasyon Çubuğu */
-nav {
-    background-color: #18181B; /* Kömür grisi */
-    border-bottom: 1px solid #27272A; /* İnce, keskin hatlar */
-    padding: 1rem 2rem;
+header p {
+    color: #A1A1AA;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.badge {
+    background-color: rgba(52, 211, 153, 0.1);
+    color: #34D399;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+/* Navigasyon Linkleri ve Logo Revizesi */
+.nav-logo {
+    font-weight: 700;
+    color: #34D399;
+    font-size: 1.3rem;
+    font-family: 'Fira Code', monospace;
+}
+.nav-logo span {
+    animation: blink 1s infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.nav-links a {
+    color: #A1A1AA;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #34D399;
+}
+
+/* Oyun Tanıtım Alanı (Flexbox Düzeni) */
+.game-showcase {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    flex-wrap: wrap; /* Mobilde alt alta gelmesi için */
+}
+
+.game-img-box {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, #18181B 0%, #27272A 100%);
+    border: 2px dashed #34D399;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #34D399;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.game-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.game-details h2 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.game-details p {
+    color: #A1A1AA;
+    margin-bottom: 2rem;
+}
+
+/* Canlı Sayaç Tasarımı (Grid Düzeni) */
+.countdown-container {
+    background: #18181B;
+    border: 1px solid #27272A;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #34D399;
+}
+
+.countdown-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #71717A;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.timer-slot {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.logo {
+.timer-slot span:first-child {
+    font-size: 2rem;
     font-weight: 700;
-    color: #34D399; /* Net, oturaklı mühendislik yeşili */
-    font-size: 1.2rem;
-}
-
-/* 4. Ağırbaşlı Proje Kartları (Esnaf Simulator Kartı İçin) */
-.project-card {
-    background-color: #18181B; /* Koyu premium arka plan */
-    border: 1px solid #27272A; /* Parlama yok, temiz kenarlık */
-    border-radius: 8px;
-    padding: 2rem;
-    max-width: 500px;
-    margin: 2rem auto;
-    text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-}
-
-/* 5. Geri Sayım Alanı (Net ve Minimalist) */
-.countdown-section {
-    background: #27272A;
-    border-radius: 6px;
-    padding: 1rem;
-    margin-top: 1.5rem;
-}
-
-.countdown-timer {
-    font-size: 1.5rem;
-    font-weight: bold;
     color: #FFFFFF;
-    letter-spacing: 2px;
+    font-family: 'Fira Code', monospace;
 }
 
-/* 6. Alt Bilgi (Footer) */
-footer {
-    text-align: center;
-    padding: 2rem;
+.timer-label {
+    font-size: 0.75rem;
     color: #71717A;
-    font-size: 0.85rem;
-    border-top: 1px solid #27272A;
-    margin-top: 4rem;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+}
+
+/* Teknolojik Altyapı Alanı */
+.features {
+    max-width: 1000px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+.features h2 {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+}
+.feature-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.f-box {
+    flex: 1;
+    min-width: 280px;
+    background: #18181B;
+    border: 1px solid #27272A;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+.f-box:hover {
+    border-color: #34D399;
+}
+.f-box h3 {
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+.f-box p {
+    color: #A1A1AA;
+    font-size: 0.95rem;
+}
+
+/* Footer Linki */
+footer a {
+    color: #34D399;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
 }
