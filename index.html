@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CORE-S Studios | Esnaf Simulator</title>
-    <meta name="description" content="CORE-S Studios | 3D Oyun Geliştirme & Optimizasyon" />
+    
+    <!-- ===== ARAMA MOTORU (SEO) OPTİMİZASYONLARI ===== -->
+    <title>CORE-S Studios | Esnaf Simulator Resmi Web Sitesi</title>
+    <meta name="description" content="CORE-S Studios resmi web sitesi. Godot 4 ve Debian gücüyle geliştirilen 3D Esnaf Simulator oyunu, yazılım optimizasyonları ve siber-dijital projeler." />
+    <meta name="keywords" content="core-s studios, core-s, esnaf simulator, godot 4, debian 13, oyun geliştirme, game dev, bağımsız oyun, siber esnaf" />
+    <meta name="author" content="CORE-S Studios" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Google Search Console Doğrulama Kodu (Sana verilen kodu content="..." içine yapıştır) -->
+    <meta name="google-site-verification" content="google-site-verification: google3a5f1df5f372e35a.html" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -497,11 +505,11 @@
             <div class="feature-row">
                 <div class="f-box">
                     <h3>🎮 Godot 4 Gücü</h3>
-                    <p>En güncel oyun motoru teknolojilerini kullanarak hafif, kararlı ve yüksek performanslı 3D sahneler üreciyoruz.</p>
+                    <p>En güncel oyun motoru teknolojilerini kullanarak hafif, kararlı ve yüksek performanslı 3D sahneler üretiyoruz.</p>
                 </div>
                 <div class="f-box">
-                    <h3>🐧 Debian 13 Gücü</h3>
-                    <p>Oyunlarımızı Debian 13 üzerinde, sağlam ve kararlı bir Linux altyapısıyla, şişirilmiş arka plan servislerinden arındırılmış saf güçle kodluyoruz.</p>
+                    <h3>🐧POP!_OS GÜCÜ </h3>
+                    <p>Oyunlarımızı POP!_os ÜZERİNDE, sağlam ve kararlı bir Linux altyapısıyla, şişirilmiş arka plan servislerinden arındırılmış saf güçle kodluyoruz.</p>
                 </div>
             </div>
         </section>
@@ -514,7 +522,7 @@
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         // --- 1. GERİ SAYIM MOTORU ---
-        const cikanOyunTarihi = "2026-06-30T00:00:00";
+        const cikanOyunTarihi = "2026-07-05T00:00:00";
 
         function tikTokSayac() {
             const hedef = new Date(cikanOyunTarihi).getTime();
@@ -556,30 +564,24 @@
 
         // --- 3. SYNTHESIZER SES MOTORU (WEB AUDIO API) ---
         function uyariSesiCal() {
-            // Tarayıcının kendi ses motorunu başlatıyoruz
             const AudioContext = window.AudioContext || window.webkitAudioContext;
             if (!AudioContext) return;
             const ctx = new AudioContext();
 
-            // Ses dalgası üreticisi (Sinyal jeneratörü)
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
 
-            osc.type = 'sawtooth'; // Retro, siber esnaf tınısı için testere dişi dalga
+            osc.type = 'sawtooth'; 
             
-            // Çift ton efekti (Önce yüksek frekans, sonra aniden düşüş: "Bup!" efekti)
-            osc.frequency.setValueAtTime(220, ctx.currentTime); // Başlangıç kalınlığı
-            osc.frequency.exponentialRampToValueAtTime(110, ctx.currentTime + 0.15); // Bitiş kalınlığı
+            osc.frequency.setValueAtTime(220, ctx.currentTime); 
+            osc.frequency.exponentialRampToValueAtTime(110, ctx.currentTime + 0.15); 
 
-            // Sesin patlayıp pürüzsüzce sönmesi için Gain (Ses Seviyesi) ayarı
-            gain.gain.setValueAtTime(0.15, ctx.currentTime); // Başlangıç sesi (%15 rahatsız etmesin)
-            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18); // Sönümleme süresi
+            gain.gain.setValueAtTime(0.15, ctx.currentTime); 
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18); 
 
-            // Bağlantıları yap ve hoparlöre gönder
             osc.connect(gain);
             gain.connect(ctx.destination);
 
-            // Sesi başlat ve bitir
             osc.start(ctx.currentTime);
             osc.stop(ctx.currentTime + 0.18);
         }
@@ -603,10 +605,8 @@
         character.addEventListener('click', () => {
             clearTimeout(bubbleTimeout);
             
-            // 1. Sesi çal (Sıfır yük, saf kod)
             uyariSesiCal();
 
-            // 2. Repliği ekrana bas
             const rastgeleReplik = replikler[Math.floor(Math.random() * replikler.length)];
             bubble.innerText = rastgeleReplik;
             bubble.classList.add('active');
